@@ -1054,7 +1054,7 @@ class analysis:
                         pairdf_shape_new = np.shape(pairdf)
                         if pairdf_shape != None:
                             if pairdf_shape_new != pairdf_shape:
-                                print('Warning: Paired Models have different size')
+                                print('Warning: Paired Models have different size',pairdf_shape,pairdf_shape_new)
                                 pairdf_shape = pairdf_shape_new
                             else:
                                 pairdf_shape = pairdf_shape_new
