@@ -922,6 +922,7 @@ class analysis:
                     domain_name = domain_names[domain]
 
                     # Then loop through each of the pairs to add to the plot.
+                    pairdf_shape = None      #BEIMING
                     for p_index, p_label in enumerate(pair_labels):
                         p = self.paired[p_label]
                         # find the pair model label that matches the obs var
@@ -1047,6 +1048,18 @@ class analysis:
                         else:
                             print('Warning: set rem_obs_nan = True for regulatory metrics') 
                             pairdf = pairdf_all.reset_index().dropna(subset=[modvar])
+
+                        # Print out an warning if paired Models have different size  (Beiming)
+                        print('pairdf shape',np.shape(pairdf))
+                        pairdf_shape_new = np.shape(pairdf)
+                        if pairdf_shape != None:
+                            if pairdf_shape_new != pairdf_shape:
+                                print('Warning: Paired Models have different size')
+                                pairdf_shape = pairdf_shape_new
+                            else:
+                                pairdf_shape = pairdf_shape_new
+                        else:  #pairdf_shape = None, 1st model 
+                            pairdf_shape = pairdf_shape_new
 
                         # JianHe: do we need provide a warning if pairdf is empty (no valid obsdata) for specific subdomain?
                         if pairdf.empty or pairdf[obsvar].isnull().all():
