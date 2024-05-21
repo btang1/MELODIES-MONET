@@ -284,7 +284,7 @@ For each plotting group, update the label and include the following information.
 Note: the labels need to be unique, but otherwise are not used.
 
 **type:** The plot type. Options are: "timeseries", "taylor", "spatial_bias",
-"spatial_overlay", "spatial_bias_exceedance", "boxplot", "multi-boxplot"
+"spatial_overlay", "spatial_bias_exceedance", "boxplot", "multi-boxplot","csi"
 Note: "spatial_bias_exceedance" plots only work when regulatory = True.
 
 **fig_kwargs:** This is optional to provide a dictionary with figure 
@@ -329,10 +329,18 @@ will be used to plot. if use 'epa+region' then a total of 61 regions can be choo
 **region_list:** multi-box plot only. list of regions in the above 'region_name' variable 
 user want to plot.
 
+<<<<<<< HEAD
 **model_name_list:** multi-box plot only. list of observation and model names user choose to set as x-labels.
 for csi plot, list of model names (only) user choose to set as labels.
 
 **threshold_list:** csi plot only. list of values used as x variables. example: [10,20,30,40,50,60,70,80,90,100]
+=======
+**model_name_list:** 
+for multi-box plot, list of observation and model names user choose to set as x-labels; 
+for csi plot, list of model names (only) user choose to set as labels.
+
+**threshold_list:** csi plot only. list of values used as x variables. example: [10,20,30,40,50,60,70,80,90,100] 
+>>>>>>> 8742123b43aa5855619960da6b74bb7b9b8bea45
 
 **score_name:** csi plot only. list of scores user can choose to plot. examples are "Critical Success Index' 'False Alarm Rate' 'Hit Rate'.
 
